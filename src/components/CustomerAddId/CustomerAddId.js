@@ -2,11 +2,34 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import './CustomerAddId.css'
 
+
+
 const CustomerAddId = () => {
     const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => console.log(data);
+    const onSubmit = data =>{
+      console.log(data);
+      const customerDetails = {
+        customerDetails : data
+      };
+      fetch('http://localhost:4200/addCustomer',{
+        method:'POST',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body:JSON.stringify(customerDetails)
+      })
+      .then(res => res.json())
+      .then(data =>{
+        console.log('data paise',data);
+      })
 
+    }
 
+        
+      
+      
+
+  
   return (
             <form className="display" onSubmit={handleSubmit(onSubmit)}>
 
@@ -32,7 +55,7 @@ const CustomerAddId = () => {
                 
                 <input type="submit" />
             </form>
-  )
-};
+      )
+  };
 
 export default CustomerAddId;
