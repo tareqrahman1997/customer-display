@@ -1,0 +1,15 @@
+.display{
+    margin: 30px 100px;
+
+}
+.display input{
+    display: block;
+    margin-bottom: 30px;
+    padding: 5px;
+    border: 1px solid green;
+    border-radius: 5px;
+    width: 250px;
+}
+.error{
+    color: red;
+}

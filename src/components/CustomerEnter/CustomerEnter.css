@@ -1,0 +1,14 @@
+.table{
+    width: 100%;
+}
+.table ,th,td{
+    
+        border: 1px solid black;
+        border-collapse: collapse;
+      
+}
+.table,th, td {
+    color: crimson;
+    padding: 5px;
+    text-align: left;
+  }
