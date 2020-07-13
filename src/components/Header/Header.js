@@ -1,13 +1,15 @@
 import React from 'react';
-import CustomerAddId from '../CustomerAddId/CustomerAddId';
+import './Header.css';
 
 const Header = () => {
     return (
-        <div>
-
-            <CustomerAddId></CustomerAddId>
-
-            
+        <div className="header">
+            <nav>
+                <a href="/customerInfo">Information</a>
+                <a href="/customerAddId">CustomerEnter</a>
+                <a href="/login">Login</a>
+                
+            </nav>
         </div>
     );
 };

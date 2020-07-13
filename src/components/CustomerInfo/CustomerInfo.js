@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import CustomerEnter from '../CustomerEnter/CustomerEnter';
 import { removeFromDatabase } from '../../utilities/databaseManager';
+import "./CustomerInfo.css"
 
 
 const CustomerInfo = (props) => {
@@ -28,7 +29,7 @@ const CustomerInfo = (props) => {
 
 
     return (
-        <div>
+        <div className="customerInfo">
                 {
                     customers.map(cm => <CustomerEnter
                     handleRemoveCustomer = {handleRemoveCustomer}

@@ -4,18 +4,22 @@ import './CustomerEnter.css'
 const CustomerEnter = (props) => {
  //   console.log(props);
 
-    const {id, name, phone, month, totalAmount} = props.customer;
+    const {id,bill, name, mobile, month, amount,customerDetailsTime} = props.customer;
     
     return (
-        <div className="table">
-                <table>
+        <div className="container-sm">
+                <table className="table">
+                   <tr>
+                      <th>S/N:</th>
+                      <td>{bill}</td>
+                    </tr>
                     <tr>
-                      <th>{id}.Name:</th>
+                      <th>{id}Name:</th>
                       <td>{name}</td>
                     </tr>
                     <tr>
                       <th>Mobile</th>
-                      <td>{phone}</td>
+                      <td>{mobile}</td>
                     </tr>
                     <tr>
                       <th>Month</th>
@@ -23,15 +27,14 @@ const CustomerEnter = (props) => {
                     </tr>
                     <tr>
                        <th>Total-Amount</th>
-                      <td>{totalAmount}Taka</td>
+                      <td>{amount}Taka</td>
+                    </tr>
+                    <tr>
+                       <th>customerDetailsTime:</th>
+                      <td>{customerDetailsTime}</td>
                     </tr>
                 </table>
-            
-                <button className="remove-btn"
-                      onClick={() => props.handleRemoveCustomer(id)}
-                >Remove Data</button>
         
-            
         </div>
     );
 };
