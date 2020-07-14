@@ -11,7 +11,7 @@ const CustomerInfo = (props) => {
     const [customers, setCustomers] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:4200/customerInfo')
+        fetch('https://guarded-fortress-16569.herokuapp.com/customerInfo')
         .then(res => res.json())
         .then(data =>{
           //  console.log('data',data);

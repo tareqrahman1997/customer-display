@@ -1,16 +1,17 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import './CustomerAddId.css'
+import { clearLocalShoppingCart } from '../../utilities/databaseManager';
 
 
 
-const CustomerAddId = () => {
+const CustomerAddId = (props) => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data =>{
     //  console.log(data);
       const customerDetails = data;
 
-      fetch('http://localhost:4200/addCustomer',{
+      fetch('https://guarded-fortress-16569.herokuapp.com/addCustomer',{
         method:'POST',
         headers: {
           'Content-Type' : 'application/json'
@@ -20,6 +21,7 @@ const CustomerAddId = () => {
       .then(res => res.json())
       .then(data =>{
         console.log(data);
+        clearLocalShoppingCart();
       
       })
 
@@ -31,7 +33,7 @@ const CustomerAddId = () => {
 
   
   return (
-    <div className="top">
+    <div className="container-sm">
           <div className="primary">
             <form className="display" onSubmit={handleSubmit(onSubmit)}>
 

@@ -3,10 +3,12 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebaseConfig';
 import { useState } from 'react';
+import CustomerAddId from '../CustomerAddId/CustomerAddId';
 
 firebase.initializeApp(firebaseConfig);
 
-const Login = () => {
+const Login = (props) => {
+    console.log(props);
     const [user,setUser] = useState({
         isSignedIn:false,
         name: '',
@@ -119,6 +121,7 @@ const Login = () => {
                 createdUser.isSignedIn = true;
                 createdUser.error ='';
                 setUser(createdUser);
+                window.location="/customerAddId"
             })
             .catch(err =>{
              //   console.log(err.message);
@@ -135,41 +138,48 @@ const Login = () => {
 
 
     return (
-        <div> 
-           {
-               user.isSignedIn ? <button onClick={handleSignOut}>Sing out</button> :
-               <button onClick={handleSignIn} >Sign in</button>
-              
-           }
-           {
-               user.isSignedIn && <div>
-                   <p>welcome:{user.name}</p>
-                   <p>Your email:{user.email}</p>
-               </div>
-           }
-           <h1>our information</h1>
-           <input type="checkbox" name="switchForm" onChange={switchForm}/>
-           <label htmlFor="switchForm">Returning user</label>
-           <form style={{display:user.existingUser ? 'block':'none'}} onSubmit={signInUser}>
-                <input type="text" onBlur={handleChange} name="email" placeholder="Your email" required />
-                <br/>
-                <input type="password" onBlur={handleChange} name="password" placeholder="Your password" required />
-                <br/>
-                <input type="submit" value=" SignIn"/>
-           </form>
+        <div className="container-sm" >
+            <div class="alert alert-danger" role="alert">
+                    {/* {
+                        user.isSignedIn ? <button type="button" class="btn btn-primary" onClick={handleSignOut}>Sing out</button> :
+                        <button onClick={handleSignIn} >Sign in</button>
+                        
+                    }
+                    {
+                        user.isSignedIn && <div>
+                            <p>welcome:{user.name}</p>
+                            <p>Your email:{user.email}</p>
+                        </div>
+                    }
+                    <h1>our information</h1>
+                    <input type="checkbox" name="switchForm" onChange={switchForm}/>
+                    <label htmlFor="switchForm">Returning user</label> */}
+            
+                        <form style={{display:user.existingUser ? 'none':'block'}} onSubmit={signInUser}>
+                                <input type="text" onBlur={handleChange} name="email" placeholder="Your email" required />
+                                <br/>
+                                <br/>
+                                <input type="password" onBlur={handleChange} name="password" placeholder="Your password" required />
+                                <br/>
+                                <br/>
+                                <input type="submit" class="btn btn-primary" value=" SignIn"/>
+                        </form>
+        
 
-           <form style={{display:user.existingUser ? 'none':'block'}} onSubmit={createAccount}>
-                <input type="text" onBlur={handleChange} name="name" placeholder="Your name" required />
-                <br/>
-                <input type="text" onBlur={handleChange} name="email" placeholder="Your email" required />
-                <br/>
-                <input type="password" onBlur={handleChange} name="password" placeholder="Your password" required />
-                <br/>
-                <input type="submit" value=" Create Account"/>
-           </form>
-           {
-               user.error && <p style={{color:'red'}}>{user.error}</p>
-           }
+                    {/* <form style={{display:user.existingUser ? 'block':'none'}} onSubmit={createAccount}>
+                            <input type="text" onBlur={handleChange} name="name" placeholder="Your name" required />
+                            <br/>
+                            <input type="text" onBlur={handleChange} name="email" placeholder="Your email" required />
+                            <br/>
+                            <input type="password" onBlur={handleChange} name="password" placeholder="Your password" required />
+                            <br/>
+                            <br/>
+                            <input type="submit" class="btn btn-primary" value=" Create Account"/>
+                    </form> */}
+                    {
+                        user.error && <p style={{color:'red'}}>{user.error}</p>
+                    }
+            </div>
             
         </div>
     );
