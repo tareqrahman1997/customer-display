@@ -1,15 +1,20 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import './CustomerAddId.css'
-import { clearLocalShoppingCart } from '../../utilities/databaseManager';
 
 
 
 const CustomerAddId = (props) => {
     const { register, handleSubmit, errors } = useForm();
+    
     const onSubmit = data =>{
     //  console.log(data);
+
+    
       const customerDetails = data;
+      
+
+      
 
       fetch('https://guarded-fortress-16569.herokuapp.com/addCustomer',{
         method:'POST',
@@ -20,22 +25,25 @@ const CustomerAddId = (props) => {
       })
       .then(res => res.json())
       .then(data =>{
-        console.log(data);
-        clearLocalShoppingCart();
+       // console.log(data);
+        alert('Do You want Add This');
+        
+        
+
       
       })
+       
+      
+      
 
     }
-
-        
-      
-      
+     
 
   
   return (
     <div className="container-sm">
           <div className="primary">
-            <form className="display" onSubmit={handleSubmit(onSubmit)}>
+            <form  className="display" onSubmit={handleSubmit(onSubmit)}>
 
                 {errors.bill && <span className="error">Bill is required</span>}
                 <input name="bill" ref={register({ required: true })} placeholder="Bill NO" />
