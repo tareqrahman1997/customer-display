@@ -17,6 +17,7 @@ import Login from './components/Login/Login';
 
 
 
+
 function App() {
   return (
     <div>
@@ -30,10 +31,11 @@ function App() {
                <CustomerInfo></CustomerInfo>
             </Route>
             <Route path="/login">
-               <Login></Login>
+                <Login></Login>
             </Route>
           </Switch>
         </Router>
+        
     
           
           

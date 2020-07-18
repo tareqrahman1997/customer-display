@@ -1,9 +1,15 @@
+.container-sm{
+    display: flex;
+    border-bottom: 2px solid red;
+    padding: 30px;
+}
 .table{
     width: 100%;
 }
 .table{
     
     background-color: lightblue;
+    
     
 }
 .table ,th,td{ 

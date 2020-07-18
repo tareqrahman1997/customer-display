@@ -24,7 +24,7 @@ const CustomerAddId = (props) => {
         body: JSON.stringify(customerDetails)
       })
       .then(res => res.json())
-      .then(data =>{
+      .then(res =>{
        // console.log(data);
         alert('Do You want Add This');
         

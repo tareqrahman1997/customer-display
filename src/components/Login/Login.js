@@ -139,7 +139,6 @@ const Login = (props) => {
 
     return (
         <div className="container-sm" >
-            <div class="alert alert-danger" role="alert">
                     {/* {
                         user.isSignedIn ? <button type="button" class="btn btn-primary" onClick={handleSignOut}>Sing out</button> :
                         <button onClick={handleSignIn} >Sign in</button>
@@ -179,7 +178,6 @@ const Login = (props) => {
                     {
                         user.error && <p style={{color:'red'}}>{user.error}</p>
                     }
-            </div>
             
         </div>
     );
