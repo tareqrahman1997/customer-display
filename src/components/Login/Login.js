@@ -3,12 +3,11 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebaseConfig';
 import { useState } from 'react';
-import CustomerAddId from '../CustomerAddId/CustomerAddId';
-
+import {withRouter} from "react-router-dom";
 firebase.initializeApp(firebaseConfig);
 
 const Login = (props) => {
-    console.log(props);
+    console.log(props.history);
     const [user,setUser] = useState({
         isSignedIn:false,
         name: '',
@@ -121,7 +120,7 @@ const Login = (props) => {
                 createdUser.isSignedIn = true;
                 createdUser.error ='';
                 setUser(createdUser);
-                window.location="/customerAddId"
+                props.history.push("/customerAddId");
             })
             .catch(err =>{
              //   console.log(err.message);
@@ -183,4 +182,4 @@ const Login = (props) => {
     );
 };
 
-export default Login;
+export default withRouter(Login);

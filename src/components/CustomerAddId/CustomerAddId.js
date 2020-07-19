@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import './CustomerAddId.css'
+import './CustomerAddId.css';
 
 
 
-const CustomerAddId = (props) => {
+
+const CustomerAddId = () => {
     const { register, handleSubmit, errors } = useForm();
     
     const onSubmit = data =>{
@@ -68,6 +69,7 @@ const CustomerAddId = (props) => {
                 <input type="submit" />
             </form>
           </div>
+          <h2>this is form</h2>
         </div>  
       )
   };
