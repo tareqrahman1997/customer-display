@@ -1,14 +1,26 @@
 import React from 'react';
-import './Header.css';
+//import './Header.css';
+import { BrowserRouter as Link
+  } from "react-router-dom";
 
 const Header = () => {
     return (
         <div className="header">
             <nav>
-                <a href="/customerInfo">Information</a>
-                <a href="/login">Login</a>
+                <ul>
+                    <li>
+                        <Link  to="/customerInfo">Information</Link>
+                    </li>
+                    <li>
+                        <Link to="/login">Login</Link>
+                    </li>
+                </ul>
                 
-            </nav>
+                    
+                    
+                
+                
+            </nav> 
         </div>
     );
 };

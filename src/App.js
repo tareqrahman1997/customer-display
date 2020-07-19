@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
 import CustomerInfo from './components/CustomerInfo/CustomerInfo';
 
 import {
@@ -18,23 +17,42 @@ import Login from './components/Login/Login';
 
 
 
+
 function App() {
   return (
     <div>
-        <Header></Header>
         <Router>
+         <div className="header">
+            <nav>
+             
+              <ul>
+                <li>
+                  <Link to="/customerInfo">Home</Link>
+                </li>
+                <li>
+                  <Link to="/login">Login</Link>
+                  <Link to="/customerAddId"></Link>
+                </li>
+              </ul>
+            </nav>
+         </div>
           <Switch>
+
             <Route path="/customerAddId">
-              <CustomerAddId></CustomerAddId>
+                <CustomerAddId></CustomerAddId>
             </Route>
+            
             <Route path="/customerInfo">
                <CustomerInfo></CustomerInfo>
             </Route>
+
             <Route path="/login">
                 <Login></Login>
             </Route>
+
           </Switch>
         </Router>
+        
         
     
           
