@@ -7,7 +7,7 @@ import "./CustomerInfo.css"
 
 
 const CustomerInfo = (props) => {
- //  const first10 = fakeData.slice(0,10);
+    
     const [customers, setCustomers] = useState([]);
 
     useEffect(() =>{

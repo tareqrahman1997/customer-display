@@ -31,7 +31,7 @@ function App() {
                 </li>
                 <li>
                   <Link to="/login">Login</Link>
-                  <Link to="/customerAddId"></Link>
+                  <Link to="/customerAddId">h</Link>
                 </li>
               </ul>
             </nav>
