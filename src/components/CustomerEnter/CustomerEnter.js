@@ -4,7 +4,7 @@ import './CustomerEnter.css'
 const CustomerEnter = (props) => {
  //   console.log(props);
 
-    const {id,bill, name, mobile, month, amount,customerDetailsTime} = props.customer;
+    const {id, bill, name, mobile, month, amount, customerDetailsTime} = props.customer;
     
     return (
         <div className="container-sm">

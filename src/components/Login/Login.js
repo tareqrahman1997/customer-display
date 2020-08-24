@@ -7,7 +7,7 @@ import {withRouter} from "react-router-dom";
 firebase.initializeApp(firebaseConfig);
 
 const Login = (props) => {
-    console.log(props.history);
+    
     const [user,setUser] = useState({
         isSignedIn:false,
         name: '',

@@ -10,6 +10,7 @@ import {
   Link
 } from "react-router-dom";
 import CustomerAddId from './components/CustomerAddId/CustomerAddId';
+import Search from './components/Search/Search';
 
 
 
@@ -35,18 +36,24 @@ function App() {
                   </li>
                 </ul>
               </nav>
-          </div>
+           </div>
 
           <Switch>
-            <Route path="/customerInfo">
-               <CustomerInfo></CustomerInfo>
-            </Route>
+            
             <Route path="/login">
                 <Login></Login>
             </Route>
-            <Route>
+            <Route exact path="/">
+              <Search></Search>
+              <CustomerInfo></CustomerInfo>
+            </Route>
+            <Route path="/customerAddId">
               <CustomerAddId></CustomerAddId>
             </Route>
+            <Route path="/customerInfo">
+               <CustomerInfo></CustomerInfo>
+            </Route>
+            
           </Switch>
 
         </Router>

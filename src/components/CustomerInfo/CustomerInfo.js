@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-//import fakeData from '../../fakeData';
 import { useState } from 'react';
 import CustomerEnter from '../CustomerEnter/CustomerEnter';
 import { removeFromDatabase } from '../../utilities/databaseManager';
@@ -24,7 +23,14 @@ const CustomerInfo = (props) => {
         setCustomers(newCustomer);
         removeFromDatabase(customerId);
     }
+    
 
+    
+    
+    
+
+    
+    
     
 
 
@@ -35,8 +41,13 @@ const CustomerInfo = (props) => {
                     handleRemoveCustomer = {handleRemoveCustomer}
                     customer={cm}></CustomerEnter>)
                 }
+                
+                
+                
             
         </div>
+            
+            
     );
 };
 

@@ -8,7 +8,7 @@ import './CustomerAddId.css';
 const CustomerAddId = () => {
     const { register, handleSubmit, errors } = useForm();
     
-    const onSubmit = data =>{
+    const onSubmit = (data) =>{
     //  console.log(data);
 
     
@@ -29,16 +29,11 @@ const CustomerAddId = () => {
        // console.log(data);
         alert('Do You want Add This');
         
-        
-
-      
       })
-       
-      
-      
+     
 
     }
-     
+    
 
   
   return (
